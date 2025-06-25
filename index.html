@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Modell in AR anzeigen</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #f9f9f9;
+      font-family: Arial, sans-serif;
+    }
+    model-viewer {
+      width: 100%;
+      max-width: 600px;
+      height: 500px;
+      margin-top: 20px;
+    }
+    h1 {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>3D Modell in AR ansehen</h1>
+
+  <model-viewer
+    src="scene.glb"
+    ar
+    ar-modes="scene-viewer webxr quick-look"
+    environment-image="neutral"
+    auto-rotate
+    camera-controls
+    alt="3D Modell">
+  </model-viewer>
+
+  <!-- Optional: iOS-Link für AR Quick Look -->
+  <a rel="ar" href="scene.usdz">
+    <button style="margin-top: 20px; padding: 10px 20px; font-size: 16px;">iOS: In AR ansehen</button>
+  </a>
+
+</body>
+</html>
